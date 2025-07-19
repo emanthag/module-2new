@@ -1,2 +1,2 @@
-# coursera-test
-Coursera test repository
+# assignment 2 solution
+Assignment 2 repository
