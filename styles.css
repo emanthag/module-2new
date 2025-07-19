@@ -43,6 +43,12 @@ color: #fff;
 background-color: lightblue;
 z-index: 2;
 }
+p {
+  width: 100px;
+  height: 50px;
+  padding: 20px;
+  border: 1px solid;
+}
 /* Unique colors for each section title */
 .section.chicken .section-title {
 background: #c0392b;
