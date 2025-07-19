@@ -1,1 +1,126 @@
 
+/* Box sizing and base spacing */
+html {
+box-sizing: border-box;
+}
+*, *:before, *:after {
+box-sizing: inherit;
+}
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0 2%;
+background: #faf7f2;
+}
+h1 {
+font-size: 2.75em; /* 75% larger than base 1.6em */
+text-align: center;
+margin: 32px 0 40px 0;
+}
+.section {
+position: relative;
+border: 1px solid #000;
+border-radius: 8px;
+background: #e9f5e1;
+color: #222;
+padding: 56px 24px 24px 24px; /* top padding for title region */
+margin-bottom: 32px;
+min-height: 200px;
+transition: width 0.3s;
+}
+.section-title {
+position: absolute;
+top: 0;
+right: 0;
+margin: 0;
+border: 1px solid #000;
+border-top-right-radius: 8px;
+border-bottom-left-radius: 16px;
+padding: 10px 28px;
+font-size: 1.25em;
+font-weight: bold;
+color: #fff;
+background: #3c7d3c;
+z-index: 2;
+}
+/* Unique colors for each section title */
+.section.chicken .section-title {
+background: #c0392b;
+}
+.section.beef .section-title {
+background: #2980b9;
+}
+.section.sushi .section-title {
+background: #f39c12;
+color: #222;
+}
+
+/* ---- Desktop: 3 in one row, equal width ---- */
+@media only screen and (min-width: 992px) {
+.sections-wrapper {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto 0 auto;
+}
+.section {
+float: left;
+width: 31.33%;
+margin-right: 3%;
+margin-bottom: 32px;
+}
+.section:last-child {
+margin-right: 0;
+}
+}
+
+/* ---- Tablet: 2 in first row, 1 in second ---- */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.sections-wrapper {
+width: 100%;
+max-width: 900px;
+margin: 0 auto 0 auto;
+}
+.section {
+float: left;
+width: 48%;
+margin-right: 4%;
+margin-bottom: 32px;
+}
+.section:nth-child(2) {
+margin-right: 0;
+}
+.section:nth-child(3) {
+width: 100%;
+margin-right: 0;
+clear: both;
+}
+}
+
+/* ---- Mobile: each in full width, stacked ---- */
+@media only screen and (max-width: 767px) {
+.sections-wrapper {
+width: 100%;
+}
+.section {
+width: 100%;
+margin-right: 0;
+margin-bottom: 24px;
+float: none;
+}
+}
+
+/* Clear floats for all views */
+.sections-wrapper::after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Optional: Responsive text for smaller screens */
+@media only screen and (max-width: 500px) {
+h1 { font-size: 2em; }
+.section-title { font-size: 1em; }
+.section { padding: 44px 10px 16px 10px; }
+}
+
+
